@@ -10,6 +10,7 @@
 #define THDynamicAllocatorProtocol_h
 #import <Foundation/Foundation.h>
 
+/// 遵循该协议的所有类都可以作为桥接器使用
 @protocol THDynamicAllocatable <NSObject>
 @required
 

@@ -25,14 +25,17 @@
     return self;
 }
 
+/// function 是值被拦截的 function
 - (IMP)allocateDynamicPageForFunction:(IMP)functionAdress
 {
     if (!functionAdress) return NULL;
     
+    // 读取一个动态页
     void *dynamicePage = [self fetchCandidiateDynamicPage];
     
     if (!dynamicePage) return NULL;
     
+    // 生成桥的地址
     return [self replaceAddress:functionAdress inPage:dynamicePage];
 }
 
@@ -70,20 +73,27 @@
 #pragma mark - Private
 - (void *)fetchCandidiateDynamicPage
 {
+    // 最后一个 动态内存页 page 指针
     void *reusablePage = [[self.dynamicPages lastObject] pointerValue];
     
+    // 校验是否可重用
     if (![self isValidReusablePage:reusablePage]) {
-        
+        //不可重用, 从模板对象地址处拷贝用于创建动态虚拟内存页
         void *toCopyAddress = [self templatePageAddress];
         if (!toCopyAddress) return NULL;
         
+        // 创建新的动态内存页
         reusablePage = (void *)THCreateDynamicePage(toCopyAddress);
         if (!reusablePage) return NULL;
         
+        // 配置新页偏移
         [self configurePageLayoutForNewPage:reusablePage];
         
+        // 存储新的页，
         [self.dynamicPages addObject:[NSValue valueWithPointer:reusablePage]];
     }
+    
+    // 返回可用的 page
     return reusablePage;
 }
 

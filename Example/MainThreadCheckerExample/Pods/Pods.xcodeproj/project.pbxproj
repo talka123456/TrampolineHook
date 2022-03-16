@@ -1,0 +1,692 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0AA2E88A4DB3FD0B6D1F4FA4801EB072 /* Pods-MainThreadCheckerExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7440FD6B51DDE4E7DB7CB10320510ECC /* Pods-MainThreadCheckerExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1943B6E6D78E203323AEB4B45D81D215 /* THPageDefinition.h in Headers */ = {isa = PBXBuildFile; fileRef = 2B991A68B94816E8BD8CEC17707C2652 /* THPageDefinition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1EDBA1D7F94DB04B886ED38CB87FD236 /* THPageVariadicContext_arm64.h in Headers */ = {isa = PBXBuildFile; fileRef = 91AEF5ACD18CF10C8BDCD5E173DE9049 /* THPageVariadicContext_arm64.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2CFF768882228831F331B2B8176B0486 /* Pods-MainThreadCheckerExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A72DB929332456E7F3B52456B3A90F0 /* Pods-MainThreadCheckerExample-dummy.m */; };
+		352EB4ED99D8221B54CAADEBD0BDACD0 /* THPageDefinition_arm64.h in Headers */ = {isa = PBXBuildFile; fileRef = 21258A22ABDACCE1E4C41234F83D069D /* THPageDefinition_arm64.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		353E0F22CCE335051209C6619AD11361 /* TrampolineHook-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EDD5A89155EB3F0881FA0D841E529330 /* TrampolineHook-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		40053C645315A5062A3F1D1A231773D7 /* THDynamicAllocatorProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 0736A8B4E3D0BF38A5DB7F7AB032F9F6 /* THDynamicAllocatorProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43FFC8FFBF193C352FF024DC8F7C39CB /* THPageAllocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 713E9797BB4862D47A049070E140CA27 /* THPageAllocator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5BE86484299A87DE108D2E6361E3BA5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		6720D8F7AD5A3373FA593BBBD2EFAA24 /* THPageDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = DCFF93DB19EEABAA2DC3E866926FED19 /* THPageDefinition.m */; };
+		727EF9BDAB030A74FF06D5AA83241604 /* TrampolineHook-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4474DCBDF187A2D097B984EB3507528E /* TrampolineHook-dummy.m */; };
+		80BBA9977E7D90071E7F4F2D197BF124 /* THVariadicPageAllocator.m in Sources */ = {isa = PBXBuildFile; fileRef = 07D6471076C4614889BBA5AFFCBDF2EE /* THVariadicPageAllocator.m */; };
+		88056C1A5884C84F4B02FA8372A65BE4 /* THPageVar_arm64.s in Sources */ = {isa = PBXBuildFile; fileRef = 6118D7B85E969D5736E7935D3CEE7873 /* THPageVar_arm64.s */; };
+		8C410557BB3EBD0AA29A9726FF241B63 /* THPage_arm64.s in Sources */ = {isa = PBXBuildFile; fileRef = 3B29B169C96267CFF636119D238156CB /* THPage_arm64.s */; };
+		A3B2C12A3B02F5A1F3F740E6FFDC1907 /* THSimplePageAllocator.h in Headers */ = {isa = PBXBuildFile; fileRef = 754D5AB04E163328D0B80CC28D628DA7 /* THSimplePageAllocator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B042C61E5BEDF46EA8B4AC1D9CCCF020 /* THPageVariadicContext_arm64.m in Sources */ = {isa = PBXBuildFile; fileRef = E91DA65B300FAA9331B0821C230FB7CD /* THPageVariadicContext_arm64.m */; };
+		B8DAD1525908FF72690F2F2FAE11F70E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		CDDB855A6F9D908B0D5F8F2FDC5DEDE7 /* THVariadicPageAllocator.h in Headers */ = {isa = PBXBuildFile; fileRef = B08E2871B42FC3DA963332100E2F7A17 /* THVariadicPageAllocator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D3071835CBDA65B167AB4750F511A8B2 /* THPageAllocator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8B85D0B2CC27C17820767486373221 /* THPageAllocator.m */; };
+		DC6F75057763376568E4508FAF27E259 /* THSimplePageAllocator.m in Sources */ = {isa = PBXBuildFile; fileRef = AAA43F73677676E58161F967BE341F69 /* THSimplePageAllocator.m */; };
+		EED3EB301F7DED537193F43A50E36B50 /* THInterceptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D65F5D6470D6FDBA94214715207082 /* THInterceptor.m */; };
+		EF83107151045A403BA3516FE2823F41 /* THInterceptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 03CB324AC1649F05EA10D86B6859CD5B /* THInterceptor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		70CFA44177EC559755B8DB5C455A8BBB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DA55F73F26F06995E308A9692654D24;
+			remoteInfo = TrampolineHook;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03CB324AC1649F05EA10D86B6859CD5B /* THInterceptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = THInterceptor.h; path = TrampolineHook/THInterceptor.h; sourceTree = "<group>"; };
+		04752AF3BCA94F57E7478D091800CA84 /* TrampolineHook.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = TrampolineHook.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0736A8B4E3D0BF38A5DB7F7AB032F9F6 /* THDynamicAllocatorProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = THDynamicAllocatorProtocol.h; sourceTree = "<group>"; };
+		07D6471076C4614889BBA5AFFCBDF2EE /* THVariadicPageAllocator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = THVariadicPageAllocator.m; sourceTree = "<group>"; };
+		16A8BCD5D33BD6F49F7733CF53B72AAD /* Pods-MainThreadCheckerExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MainThreadCheckerExample.modulemap"; sourceTree = "<group>"; };
+		19A3398FCC668283C7E8C3CE0A1D3F0E /* TrampolineHook */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TrampolineHook; path = TrampolineHook.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21258A22ABDACCE1E4C41234F83D069D /* THPageDefinition_arm64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = THPageDefinition_arm64.h; sourceTree = "<group>"; };
+		2A57AD5C4B368240E33AAA6A0F1A5C13 /* Pods-MainThreadCheckerExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MainThreadCheckerExample.release.xcconfig"; sourceTree = "<group>"; };
+		2B991A68B94816E8BD8CEC17707C2652 /* THPageDefinition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = THPageDefinition.h; path = TrampolineHook/THPageDefinition.h; sourceTree = "<group>"; };
+		3635F4747E77F4C1E9068A4F10DBDCCE /* Pods-MainThreadCheckerExample-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MainThreadCheckerExample-Info.plist"; sourceTree = "<group>"; };
+		3B29B169C96267CFF636119D238156CB /* THPage_arm64.s */ = {isa = PBXFileReference; includeInIndex = 1; path = THPage_arm64.s; sourceTree = "<group>"; };
+		439354950C2AC943D19E5B67A7EF0386 /* TrampolineHook.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TrampolineHook.release.xcconfig; sourceTree = "<group>"; };
+		4474DCBDF187A2D097B984EB3507528E /* TrampolineHook-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TrampolineHook-dummy.m"; sourceTree = "<group>"; };
+		5A72DB929332456E7F3B52456B3A90F0 /* Pods-MainThreadCheckerExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MainThreadCheckerExample-dummy.m"; sourceTree = "<group>"; };
+		6118D7B85E969D5736E7935D3CEE7873 /* THPageVar_arm64.s */ = {isa = PBXFileReference; includeInIndex = 1; path = THPageVar_arm64.s; sourceTree = "<group>"; };
+		62D65F5D6470D6FDBA94214715207082 /* THInterceptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = THInterceptor.m; path = TrampolineHook/THInterceptor.m; sourceTree = "<group>"; };
+		713E9797BB4862D47A049070E140CA27 /* THPageAllocator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = THPageAllocator.h; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7440FD6B51DDE4E7DB7CB10320510ECC /* Pods-MainThreadCheckerExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MainThreadCheckerExample-umbrella.h"; sourceTree = "<group>"; };
+		754D5AB04E163328D0B80CC28D628DA7 /* THSimplePageAllocator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = THSimplePageAllocator.h; sourceTree = "<group>"; };
+		821449584E35D3CF2CB8BDE69B2F3069 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		8F8B85D0B2CC27C17820767486373221 /* THPageAllocator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = THPageAllocator.m; sourceTree = "<group>"; };
+		91AEF5ACD18CF10C8BDCD5E173DE9049 /* THPageVariadicContext_arm64.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = THPageVariadicContext_arm64.h; sourceTree = "<group>"; };
+		939BFF944C2FA253B4D59C9FDB09024E /* TrampolineHook-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TrampolineHook-prefix.pch"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		AA810C7114E1F2766F49F6FAA9B43232 /* TrampolineHook.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TrampolineHook.debug.xcconfig; sourceTree = "<group>"; };
+		AAA43F73677676E58161F967BE341F69 /* THSimplePageAllocator.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = THSimplePageAllocator.m; sourceTree = "<group>"; };
+		B08E2871B42FC3DA963332100E2F7A17 /* THVariadicPageAllocator.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = THVariadicPageAllocator.h; sourceTree = "<group>"; };
+		B36A3B44B10A3584AC84038F0A1E2A83 /* Pods-MainThreadCheckerExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MainThreadCheckerExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		BF0E5D63ADD1B2833638428C96843C19 /* Pods-MainThreadCheckerExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MainThreadCheckerExample-acknowledgements.plist"; sourceTree = "<group>"; };
+		CEC23F0E9A240B9CD5D09F060385BFD3 /* Pods-MainThreadCheckerExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MainThreadCheckerExample.debug.xcconfig"; sourceTree = "<group>"; };
+		DCFF93DB19EEABAA2DC3E866926FED19 /* THPageDefinition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = THPageDefinition.m; path = TrampolineHook/THPageDefinition.m; sourceTree = "<group>"; };
+		E91DA65B300FAA9331B0821C230FB7CD /* THPageVariadicContext_arm64.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = THPageVariadicContext_arm64.m; sourceTree = "<group>"; };
+		ED5046F6CDA1C5ABB4AA076CDAD3D61A /* TrampolineHook.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = TrampolineHook.modulemap; sourceTree = "<group>"; };
+		EDD5A89155EB3F0881FA0D841E529330 /* TrampolineHook-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TrampolineHook-umbrella.h"; sourceTree = "<group>"; };
+		F70EFAA8175500A8B5B27B025CA88CBE /* Pods-MainThreadCheckerExample */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-MainThreadCheckerExample"; path = Pods_MainThreadCheckerExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB3F3A06DB2BB65F4E1BE742518BA7BB /* TrampolineHook-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TrampolineHook-Info.plist"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4E54B151FAE4D558C738C755FA611DCF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B8DAD1525908FF72690F2F2FAE11F70E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD002AE6D791A136AE5A14BE61C7086E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5BE86484299A87DE108D2E6361E3BA5A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		01525D4D8183A116D6973AFB97C129F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F70EFAA8175500A8B5B27B025CA88CBE /* Pods-MainThreadCheckerExample */,
+				19A3398FCC668283C7E8C3CE0A1D3F0E /* TrampolineHook */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		162730142B7F0B6504005E539BE3074F /* PageAllocator */ = {
+			isa = PBXGroup;
+			children = (
+				0736A8B4E3D0BF38A5DB7F7AB032F9F6 /* THDynamicAllocatorProtocol.h */,
+				713E9797BB4862D47A049070E140CA27 /* THPageAllocator.h */,
+				8F8B85D0B2CC27C17820767486373221 /* THPageAllocator.m */,
+				754D5AB04E163328D0B80CC28D628DA7 /* THSimplePageAllocator.h */,
+				AAA43F73677676E58161F967BE341F69 /* THSimplePageAllocator.m */,
+				B08E2871B42FC3DA963332100E2F7A17 /* THVariadicPageAllocator.h */,
+				07D6471076C4614889BBA5AFFCBDF2EE /* THVariadicPageAllocator.m */,
+			);
+			name = PageAllocator;
+			path = TrampolineHook/PageAllocator;
+			sourceTree = "<group>";
+		};
+		1C44AED74150E0DB30669E5F4CF9E65C /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				821449584E35D3CF2CB8BDE69B2F3069 /* README.md */,
+				04752AF3BCA94F57E7478D091800CA84 /* TrampolineHook.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		4BFE1049B412E806E429AC29C6497160 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EDEC99923151A5074C9C1F3BBDF1CA8A /* TrampolineHook */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		64F89F4B6E2E6DA866171867F480A648 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED5046F6CDA1C5ABB4AA076CDAD3D61A /* TrampolineHook.modulemap */,
+				4474DCBDF187A2D097B984EB3507528E /* TrampolineHook-dummy.m */,
+				FB3F3A06DB2BB65F4E1BE742518BA7BB /* TrampolineHook-Info.plist */,
+				939BFF944C2FA253B4D59C9FDB09024E /* TrampolineHook-prefix.pch */,
+				EDD5A89155EB3F0881FA0D841E529330 /* TrampolineHook-umbrella.h */,
+				AA810C7114E1F2766F49F6FAA9B43232 /* TrampolineHook.debug.xcconfig */,
+				439354950C2AC943D19E5B67A7EF0386 /* TrampolineHook.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "Example/MainThreadCheckerExample/Pods/Target Support Files/TrampolineHook";
+			sourceTree = "<group>";
+		};
+		CB53EF00C634762CABB2DB387BF89715 /* arm64 */ = {
+			isa = PBXGroup;
+			children = (
+				3B29B169C96267CFF636119D238156CB /* THPage_arm64.s */,
+				21258A22ABDACCE1E4C41234F83D069D /* THPageDefinition_arm64.h */,
+				6118D7B85E969D5736E7935D3CEE7873 /* THPageVar_arm64.s */,
+				91AEF5ACD18CF10C8BDCD5E173DE9049 /* THPageVariadicContext_arm64.h */,
+				E91DA65B300FAA9331B0821C230FB7CD /* THPageVariadicContext_arm64.m */,
+			);
+			name = arm64;
+			path = TrampolineHook/arm64;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				4BFE1049B412E806E429AC29C6497160 /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				01525D4D8183A116D6973AFB97C129F9 /* Products */,
+				FE5727E72A3F3DB5C637ED3EBF629C05 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDEC99923151A5074C9C1F3BBDF1CA8A /* TrampolineHook */ = {
+			isa = PBXGroup;
+			children = (
+				03CB324AC1649F05EA10D86B6859CD5B /* THInterceptor.h */,
+				62D65F5D6470D6FDBA94214715207082 /* THInterceptor.m */,
+				2B991A68B94816E8BD8CEC17707C2652 /* THPageDefinition.h */,
+				DCFF93DB19EEABAA2DC3E866926FED19 /* THPageDefinition.m */,
+				CB53EF00C634762CABB2DB387BF89715 /* arm64 */,
+				162730142B7F0B6504005E539BE3074F /* PageAllocator */,
+				1C44AED74150E0DB30669E5F4CF9E65C /* Pod */,
+				64F89F4B6E2E6DA866171867F480A648 /* Support Files */,
+			);
+			name = TrampolineHook;
+			path = ../../..;
+			sourceTree = "<group>";
+		};
+		EECD31A8E47E56825CCF9D998DD3E1F7 /* Pods-MainThreadCheckerExample */ = {
+			isa = PBXGroup;
+			children = (
+				16A8BCD5D33BD6F49F7733CF53B72AAD /* Pods-MainThreadCheckerExample.modulemap */,
+				B36A3B44B10A3584AC84038F0A1E2A83 /* Pods-MainThreadCheckerExample-acknowledgements.markdown */,
+				BF0E5D63ADD1B2833638428C96843C19 /* Pods-MainThreadCheckerExample-acknowledgements.plist */,
+				5A72DB929332456E7F3B52456B3A90F0 /* Pods-MainThreadCheckerExample-dummy.m */,
+				3635F4747E77F4C1E9068A4F10DBDCCE /* Pods-MainThreadCheckerExample-Info.plist */,
+				7440FD6B51DDE4E7DB7CB10320510ECC /* Pods-MainThreadCheckerExample-umbrella.h */,
+				CEC23F0E9A240B9CD5D09F060385BFD3 /* Pods-MainThreadCheckerExample.debug.xcconfig */,
+				2A57AD5C4B368240E33AAA6A0F1A5C13 /* Pods-MainThreadCheckerExample.release.xcconfig */,
+			);
+			name = "Pods-MainThreadCheckerExample";
+			path = "Target Support Files/Pods-MainThreadCheckerExample";
+			sourceTree = "<group>";
+		};
+		FE5727E72A3F3DB5C637ED3EBF629C05 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EECD31A8E47E56825CCF9D998DD3E1F7 /* Pods-MainThreadCheckerExample */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		411DAECEB2936BEC998C45533EADC88A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40053C645315A5062A3F1D1A231773D7 /* THDynamicAllocatorProtocol.h in Headers */,
+				EF83107151045A403BA3516FE2823F41 /* THInterceptor.h in Headers */,
+				43FFC8FFBF193C352FF024DC8F7C39CB /* THPageAllocator.h in Headers */,
+				1943B6E6D78E203323AEB4B45D81D215 /* THPageDefinition.h in Headers */,
+				352EB4ED99D8221B54CAADEBD0BDACD0 /* THPageDefinition_arm64.h in Headers */,
+				1EDBA1D7F94DB04B886ED38CB87FD236 /* THPageVariadicContext_arm64.h in Headers */,
+				A3B2C12A3B02F5A1F3F740E6FFDC1907 /* THSimplePageAllocator.h in Headers */,
+				CDDB855A6F9D908B0D5F8F2FDC5DEDE7 /* THVariadicPageAllocator.h in Headers */,
+				353E0F22CCE335051209C6619AD11361 /* TrampolineHook-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		53448FCF3A683328ADD08B55BA4E121F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AA2E88A4DB3FD0B6D1F4FA4801EB072 /* Pods-MainThreadCheckerExample-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		2DA55F73F26F06995E308A9692654D24 /* TrampolineHook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A6D08968F7D53557CA25BD0CC839697 /* Build configuration list for PBXNativeTarget "TrampolineHook" */;
+			buildPhases = (
+				411DAECEB2936BEC998C45533EADC88A /* Headers */,
+				88CA386DED600DBE2580B4CE565E3283 /* Sources */,
+				4E54B151FAE4D558C738C755FA611DCF /* Frameworks */,
+				872F47556E37504DA72FFE96A7ACED4B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TrampolineHook;
+			productName = TrampolineHook;
+			productReference = 19A3398FCC668283C7E8C3CE0A1D3F0E /* TrampolineHook */;
+			productType = "com.apple.product-type.framework";
+		};
+		56CF285E6BB985715547E17DC7A9B383 /* Pods-MainThreadCheckerExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C262A92AC5436DA97A3C00EB0BC80EE9 /* Build configuration list for PBXNativeTarget "Pods-MainThreadCheckerExample" */;
+			buildPhases = (
+				53448FCF3A683328ADD08B55BA4E121F /* Headers */,
+				06976A9D5B08FAA3F41E8725CAA5F86B /* Sources */,
+				DD002AE6D791A136AE5A14BE61C7086E /* Frameworks */,
+				7E8C21B79638630A3AD4594799143321 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40C25D100B78A562063C2FBF2B1EDFAE /* PBXTargetDependency */,
+			);
+			name = "Pods-MainThreadCheckerExample";
+			productName = Pods_MainThreadCheckerExample;
+			productReference = F70EFAA8175500A8B5B27B025CA88CBE /* Pods-MainThreadCheckerExample */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 01525D4D8183A116D6973AFB97C129F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				56CF285E6BB985715547E17DC7A9B383 /* Pods-MainThreadCheckerExample */,
+				2DA55F73F26F06995E308A9692654D24 /* TrampolineHook */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7E8C21B79638630A3AD4594799143321 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		872F47556E37504DA72FFE96A7ACED4B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		06976A9D5B08FAA3F41E8725CAA5F86B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2CFF768882228831F331B2B8176B0486 /* Pods-MainThreadCheckerExample-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		88CA386DED600DBE2580B4CE565E3283 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EED3EB301F7DED537193F43A50E36B50 /* THInterceptor.m in Sources */,
+				8C410557BB3EBD0AA29A9726FF241B63 /* THPage_arm64.s in Sources */,
+				D3071835CBDA65B167AB4750F511A8B2 /* THPageAllocator.m in Sources */,
+				6720D8F7AD5A3373FA593BBBD2EFAA24 /* THPageDefinition.m in Sources */,
+				88056C1A5884C84F4B02FA8372A65BE4 /* THPageVar_arm64.s in Sources */,
+				B042C61E5BEDF46EA8B4AC1D9CCCF020 /* THPageVariadicContext_arm64.m in Sources */,
+				DC6F75057763376568E4508FAF27E259 /* THSimplePageAllocator.m in Sources */,
+				80BBA9977E7D90071E7F4F2D197BF124 /* THVariadicPageAllocator.m in Sources */,
+				727EF9BDAB030A74FF06D5AA83241604 /* TrampolineHook-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		40C25D100B78A562063C2FBF2B1EDFAE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TrampolineHook;
+			target = 2DA55F73F26F06995E308A9692654D24 /* TrampolineHook */;
+			targetProxy = 70CFA44177EC559755B8DB5C455A8BBB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		3E176F8479CC7CC28BCCC98AFFF7CC63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEC23F0E9A240B9CD5D09F060385BFD3 /* Pods-MainThreadCheckerExample.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MainThreadCheckerExample/Pods-MainThreadCheckerExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MainThreadCheckerExample/Pods-MainThreadCheckerExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		77F6377CD6280CA526BD946ACBAA5720 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A57AD5C4B368240E33AAA6A0F1A5C13 /* Pods-MainThreadCheckerExample.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MainThreadCheckerExample/Pods-MainThreadCheckerExample-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MainThreadCheckerExample/Pods-MainThreadCheckerExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		87EEE601FD51830F40BE5795EADDBC0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 439354950C2AC943D19E5B67A7EF0386 /* TrampolineHook.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TrampolineHook/TrampolineHook-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TrampolineHook/TrampolineHook-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/TrampolineHook/TrampolineHook.modulemap";
+				PRODUCT_MODULE_NAME = TrampolineHook;
+				PRODUCT_NAME = TrampolineHook;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B587003A665097E0B26B494B65F8E24F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA810C7114E1F2766F49F6FAA9B43232 /* TrampolineHook.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/TrampolineHook/TrampolineHook-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/TrampolineHook/TrampolineHook-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/TrampolineHook/TrampolineHook.modulemap";
+				PRODUCT_MODULE_NAME = TrampolineHook;
+				PRODUCT_NAME = TrampolineHook;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A6D08968F7D53557CA25BD0CC839697 /* Build configuration list for PBXNativeTarget "TrampolineHook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B587003A665097E0B26B494B65F8E24F /* Debug */,
+				87EEE601FD51830F40BE5795EADDBC0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				25AD9454612BF454A1E3DC4CD4FA8C6D /* Debug */,
+				CA547D2C7E9A8A153DC2B27FBE00B112 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C262A92AC5436DA97A3C00EB0BC80EE9 /* Build configuration list for PBXNativeTarget "Pods-MainThreadCheckerExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3E176F8479CC7CC28BCCC98AFFF7CC63 /* Debug */,
+				77F6377CD6280CA526BD946ACBAA5720 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

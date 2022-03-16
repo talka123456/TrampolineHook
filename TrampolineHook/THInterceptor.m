@@ -44,10 +44,12 @@
 }
 
 #pragma mark - Public API
+/// function 是值被拦截的 function
 - (THInterceptorResult *)interceptFunction:(IMP)function
 {
     if (function == NULL) return THInterceptorResultFail;
     
+    // allocateDynamicPageForFunction 开始是核心处理逻辑
     IMP jumpAddress = [self.pageAllactor allocateDynamicPageForFunction:function];
     if (!jumpAddress) {
         NSAssert(jumpAddress != NULL, @"[THInterceptor]::Allocate dynamic page failed");
@@ -59,10 +61,12 @@
 }
 
 #pragma mark - Getter
+// 这里用映射+协议解决多态问题。
 
 - (id<THDynamicAllocatable>)pageAllactor
 {
     if (!_pageAllactor) {
+        // 用 THSimplePageAllocator 初始化 pageAllactor 对象
         Class cls = [[self class] pageAllocatorClass];
         _pageAllactor =  [[cls alloc] initWithRedirectionFunction:self.redirectFunction];
     }

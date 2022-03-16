@@ -1,0 +1,31 @@
+{
+  "name": "TrampolineHook",
+  "version": "0.0.5",
+  "summary": "A solution for centralized method redirection",
+  "description": "Intercept any method implementation with a single method.",
+  "homepage": "https://github.com/SatanWoo/TrampolineHook",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "SatanWoo": ""
+  },
+  "source": {
+    "git": "https://github.com/SatanWoo/TrampolineHook.git",
+    "tag": "0.0.5"
+  },
+  "source_files": [
+    "TrampolineHook/*.{h,m}",
+    "TrampolineHook/PageAllocator/*.{h,m}",
+    "TrampolineHook/arm64/*.{h,m}",
+    "TrampolineHook/arm64/THPage_arm64.s",
+    "TrampolineHook/arm64/THPageVar_arm64.s"
+  ],
+  "public_header_files": "Trampoline/THInterceptor.h",
+  "static_framework": true,
+  "platforms": {
+    "ios": "9.0"
+  },
+  "requires_arc": true
+}

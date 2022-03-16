@@ -19,6 +19,7 @@ static const int32_t THDynamicPageVaradicInstructionCount = 10;
 #error x86_64 & arm64e to be supported
 #endif
 
+/// 这一部分内容类似， 对应汇编文件的内存页构造结构体。
 static const size_t THNumberOfDataPerVariadicPage = (THPageSize - THDynamicPageVaradicInstructionCount * sizeof(int32_t)) / sizeof(THDynamicPageEntryGroup);
 
 typedef struct {

@@ -15,6 +15,7 @@
 #import <UIKit/UIKit.h>
 #import <objc/runtime.h>
 #import <objc/objc.h>
+#import "ViewController.h"
 
 
 #ifdef __LP64__
@@ -32,6 +33,8 @@ static void *MTGetDataSection(const struct mach_header *header, const char *sect
     return data;
 }
 
+/// 获取需要hook 的 UIKit中的类
+/// binaryName 为二进制名
 static void MTFindClassesToSwizzleInImage(const mt_macho_header *header, const char *binaryName, NSMutableArray *toSwizzleClasses)
 {
     if (header == NULL) return;
@@ -40,8 +43,12 @@ static void MTFindClassesToSwizzleInImage(const mt_macho_header *header, const c
     unsigned long size = 0;
     unsigned int classCount = 0;
     
+    // 根据Data 数据段， 指定名字对应的 section 数据
+    // 存储的是指针, data 表示的是在 MachO 中的偏移地址（加载到内存中需要+aslr）
     Class *data = (Class *)MTGetDataSection(header, "__objc_classlist", &size);
+    
     if (data == NULL) {
+        // 获取所有注册的 class list 列表
         data = objc_copyClassList(&classCount);
     } else {
         classCount = (unsigned int)(size / sizeof(void *));
@@ -52,11 +59,14 @@ static void MTFindClassesToSwizzleInImage(const mt_macho_header *header, const c
         const char *className = class_getName(cls);
         const char *imageName = class_getImageName(cls);
         
+        // 过滤所有_开头或者 非当前二进制的类
         if (strncmp(className, "_", 1) == 0) continue;
         if (strcmp(imageName, binaryName) != 0) continue;
         
         BOOL isInheritedSubClass = NO;
         Class superCls = cls;
+        
+        // 判断是否为继承自 UIView 的类。
         while (superCls && superCls != [NSObject class]) {
             if (superCls == [UIView class]) {
                 isInheritedSubClass = YES;
@@ -66,11 +76,13 @@ static void MTFindClassesToSwizzleInImage(const mt_macho_header *header, const c
         }
         
         if (isInheritedSubClass) {
+            // 继承自 UIView 的类，加入 hook list 等待 hook
             [toSwizzleClasses addObject:cls];
         }
     }
 }
 
+// hook before 执行的函数
 static void MTMainThreadChecker(id obj, SEL selector) //
 {
     if (![NSThread isMainThread]) {
@@ -103,7 +115,8 @@ static bool MTAddSwizzler(Class cls, SEL selector)
 @implementation MTInitializer
 
 + (void)enableMainThreadChecker
-{    
+{
+    // 这里为了兼容 UIKit => UIKitCore 的问题
     const char *UIKitImageName = class_getImageName([UIResponder class]);
     if (!UIKitImageName) {
         NSAssert(UIKitImageName != NULL, @"[MTInitializer]::Failed to find UIKItCore/UIKit binary");
@@ -116,7 +129,9 @@ static bool MTAddSwizzler(Class cls, SEL selector)
     for (uint32_t idx = 0; idx < imageCount; idx++) {
         const char *binaryName = _dyld_get_image_name(idx);
 
+        // 判断是否为UIKit 动态库
         if (strcmp(binaryName, UIKitImageName) == 0) {
+            // 读取 macho header 结构
             const mt_macho_header *header = (const mt_macho_header *)_dyld_get_image_header(idx);
             MTFindClassesToSwizzleInImage(header, binaryName, toSwizzleClasses);
             break;
@@ -131,6 +146,7 @@ static bool MTAddSwizzler(Class cls, SEL selector)
 
     for (Class cls in toSwizzleClasses) {
         unsigned int methodCount = 0;
+        // 获取函数列表
         Method *methods = class_copyMethodList(cls, &methodCount);
 
         for (unsigned int i = 0; i < methodCount; i++) {
@@ -141,6 +157,7 @@ static bool MTAddSwizzler(Class cls, SEL selector)
 
             if ([ignoreList containsObject:selName]) continue;
 
+            // 有前缀的也忽略
             if ([selName hasPrefix:@"nsli_"] ||
                 [selName hasPrefix:@"nsis_"]) {
                 continue;;

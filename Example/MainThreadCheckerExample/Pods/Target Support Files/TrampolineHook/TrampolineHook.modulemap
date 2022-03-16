@@ -1,0 +1,6 @@
+framework module TrampolineHook {
+  umbrella header "TrampolineHook-umbrella.h"
+
+  export *
+  module * { export * }
+}
