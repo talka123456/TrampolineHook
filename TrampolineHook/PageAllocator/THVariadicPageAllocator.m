@@ -22,15 +22,17 @@ static const int32_t THDynamicPageVaradicInstructionCount = 10;
 /// 这一部分内容类似， 对应汇编文件的内存页构造结构体。
 static const size_t THNumberOfDataPerVariadicPage = (THPageSize - THDynamicPageVaradicInstructionCount * sizeof(int32_t)) / sizeof(THDynamicPageEntryGroup);
 
+/// 新支持了 pre 和 post 功能
 typedef struct {
     union {
         struct {
-            IMP redirectFunction;
-            IMP preFunction;
-            IMP postFunction;
-            int32_t nextAvailableIndex;
+            IMP redirectFunction; // 8字节
+            IMP preFunction; // 8 字节
+            IMP postFunction; // 8 字节
+            int32_t nextAvailableIndex; // 4 字节
         };
         
+        // 占位 10 条指令的空间 10 * 4 = 40字节
         int32_t placeholder[THDynamicPageVaradicInstructionCount];
     };
     

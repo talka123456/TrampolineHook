@@ -36,13 +36,13 @@ sub x12, x12,  #0x4000
 // 存储 IMP 值到 x10 寄存器
 ldr x10, [x12]
 
-ldr x8,  pre
+ldr x8,  pre // pre 存储的地址 保存到 x8
+blr x8 // 跳转到 pre 然后创建堆空间并保存上下文环境到堆空间， 
+
+ldr x8,  interceptor // interceptor 存储的地址 保存到 x8
 blr x8
 
-ldr x8,  interceptor
-blr x8
-
-ldr x8,  post
+ldr x8,  post  // post 存储的地址 保存到 x8
 br  x8
 
 .rept 2043

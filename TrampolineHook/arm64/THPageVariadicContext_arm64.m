@@ -12,7 +12,9 @@
 
 // lr -  跳向 interceptor 的下一跳地址
 // x13 - 替换前原调用函数的下一跳地址
+// x10 - 原函数的 IMP
 
+// 保存寄存器,
 #define saveRegs() \
 __asm volatile ( \
 "stp q0,  q1,   [sp, #-32]!\n" \
@@ -27,6 +29,7 @@ __asm volatile ( \
 "stp x8,  x13,  [sp, #-16]!\n" \
 )
 
+// 恢复寄存器
 #define restoreRegs() \
 __asm volatile( \
 "ldp x8,  x13,  [sp], #16\n" \
@@ -41,13 +44,18 @@ __asm volatile( \
 "ldp q0,  q1,   [sp], #32\n" \
 )
 
+// https://www.keil.com/support/man/docs/armclang_ref/armclang_ref_jhg1476893564298.htm
+// 标识告知编译器是一个嵌入式汇编函数，调用不生成入栈和出栈的指令，
+// 进入函数代码时，调用函数仅仅会将参数和返回地址压栈， 所以需要谨慎使用其他寄存器 & 堆栈
 __attribute__((__naked__))
 void THPageVariadicContextPre(void)
 {
-    // 先保存，避免调用 malloc 破坏寄存器
+    // 先保存，避免调用 malloc 破坏寄存器和浮点寄存器，和 simple 的一致
     saveRegs();
     
     // 分配堆上内存 extra 16 byte + sizeof(THPageVariadicContext)
+    // THPageVariadicContext占用 224 字节大小。
+    // 分配大小作为入参放入 x0,然后跳转调用 malloc()
     __asm volatile ("mov x0, #0xF0");
     __asm volatile ("bl _malloc");
     
@@ -58,7 +66,7 @@ void THPageVariadicContextPre(void)
     // 恢复堆栈，避免影响变参所处在的堆栈
     restoreRegs();
     
-    // 用堆上空间保存数据
+    // 用堆上空间保存数据， 包含通用寄存器， 浮点寄存器以及 lr x10（原函数的 IMP） 寄存器等
     __asm volatile ("stp x0, x1,  [x19, #(16 + 0 * 16)]");
     __asm volatile ("stp x2, x3,  [x19, #(16 + 1 * 16)]");
     __asm volatile ("stp x4, x5,  [x19, #(16 + 2 * 16)]");
