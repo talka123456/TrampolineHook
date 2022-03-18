@@ -36,13 +36,13 @@ sub x12, x12,  #0x4000
 // 存储 IMP 值到 x10 寄存器
 ldr x10, [x12]
 
-ldr x8,  pre // pre 存储的地址 保存到 x8
+ldr x8,  pre // pre函数地址保存到 x8
 blr x8 // 跳转到 pre 然后创建堆空间并保存上下文环境到堆空间， 
 
-ldr x8,  interceptor // interceptor 存储的地址 保存到 x8
+ldr x8,  interceptor // interceptor 函数地址 保存到 x8
 blr x8
 
-ldr x8,  post  // post 存储的地址 保存到 x8
+ldr x8,  post  // post 函数地址保存到 x8， 恢复上下文寄存器并释放堆空间，内部调用了原函数的 IMP
 br  x8
 
 .rept 2043
